@@ -1,0 +1,58 @@
+<div class="myContainer" style="margin-top:20px;">
+  <div class="col-md-12">
+    <div class="col-md-12">
+      <input class="btn btn-warning" type="button" value="Surprise Me!" (click)="this.getRandomPokemon()"/>
+      Click this button to get 4 random Pokemons!
+    </div>
+  <div>
+  <div class="col-md-12 p-0 pokeDetails" style="margin-top: 20px;">
+    <div class="col-md-3">
+        <img class="pokeImg" src="{{randomImg1}}" (click)="this.getPokemonDetails(0)">
+    </div>
+    <div class="col-md-3">
+        <img class="pokeImg" src="{{randomImg2}}" (click)="this.getPokemonDetails(1)">
+    </div>
+    <div class="col-md-3">
+        <img class="pokeImg" src="{{randomImg3}}" (click)="this.getPokemonDetails(2)">
+    </div>
+    <div class="col-md-3">
+        <img class="pokeImg" src="{{randomImg4}}" (click)="this.getPokemonDetails(3)">
+    </div>
+  </div>
+  <div class="col-md-12" style="margin-top: 20px;">
+    <h3>Search for a pokemon by it's Name or Id</h3>
+    <input type="text" placeholder="name or id" [(ngModel)]="pokemonIdOrName"/>
+    <input class="btn btn-primary" style="margin-left:10px;" type="button" value="Search" (click)="this.getPokemonDetails('false')"/>
+  </div>
+  <div>
+    <div *ngIf="errorMessage" class="col-md-12 errorMessage" >
+      Please input a pokemon name or an Id
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div *ngIf="pokemonDetails.name" class="col-md-12" style="text-align: center;">
+      <h3 style="margin-bottom:20px;">{{pokemonDetails.name}} # {{pokemonDetails.id}}</h3>
+    </div>
+    <div class="col-md-12 p-0 pokeDetails">
+      <div class="col-md-6 p-0">
+        <img class="pokeImg" src="{{pokemonDetails.image}}">
+      </div>
+      <div class="col-md-6 p-0 pokeDetails">
+        <div class="col-md-12">
+          <div *ngIf="pokemonDetails.height" class="col-md-12 pokeAttribute">
+            Height: {{pokemonDetails.height}}
+          </div>
+          <div *ngIf="pokemonDetails.weight" class="col-md-12 pokeAttribute">
+            Weight: {{pokemonDetails.weight}}
+          </div>
+          <div *ngIf="pokemonDetails.type" class="col-md-12 pokeAttribute">
+            Category: {{pokemonDetails.type}}
+          </div>
+          <div *ngIf="pokemonDetails.abilities" class="col-md-12 pokeAttribute">
+            Abilities: {{pokemonDetails.abilities}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

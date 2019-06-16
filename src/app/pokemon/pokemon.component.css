@@ -1,0 +1,24 @@
+.myContainer {
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.pokeDetails {
+    display: flex;
+}
+
+.pokeImg {
+    width: 100%;
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+
+.pokeAttribute {
+    margin-bottom: 15px;
+    size: 17;
+}
+
+.errorMessage {
+    color: red;
+}
